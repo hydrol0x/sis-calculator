@@ -1,6 +1,6 @@
 import image from "../addicon.png";
 
-const CreateButton = ({ addForm }) => {
+const AddButton = ({ addForm }) => {
   const handleClick = (e) => {
     e.preventDefault();
     addForm();
@@ -8,4 +8,4 @@ const CreateButton = ({ addForm }) => {
   return <img src={image} onClick={handleClick} alt="add input" />;
 };
 
-export default CreateButton;
+export default AddButton;

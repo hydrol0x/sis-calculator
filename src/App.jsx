@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <div className="CarbTrackerDiv">
-        <h1 className="trackerh1"> Carb tracker </h1>
+        <h1 className="trackerh1"> Grade Calculator </h1>
         <Form />
       </div>
     </>

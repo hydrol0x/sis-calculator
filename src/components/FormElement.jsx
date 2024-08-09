@@ -1,30 +1,26 @@
 import "../css/formElement.css";
 
-const FormElement = ({ forms, setForms, id, carbs, amount }) => {
+const FormElement = ({ id, category, points, assignmentName, totalPoints }) => {
 
   return (
     <div className="FormElement">
       <div className="inputDiv" id="foodDiv">
-        <select id={`${id}food`} className="food">
-          <option value="0"> </option>
-          <option value="15">Apple</option>
-          <option value="20">Rice</option>
-          <option value="25">Banana</option>
-          <option value="30">Orange</option>
-          <option value="20">Bread</option>
-        </select>
+        { assignmentName }
       </div>
       <div className="inputDiv" id="weightDiv">
         <input
           id={`${id}weight`}
           type="text"
           className="weight"
-          defaultValue={amount}
+          defaultValue={points}
         />
+        <p>
+          / {totalPoints}
+        </p>
       </div>
       <div className="inputDiv" id="carbsDiv">
         <p id={`${id}carbs`} className="carbs">
-          {carbs}
+          {category[0]} - {category[1]}%
         </p>
       </div>
     </div>
