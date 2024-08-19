@@ -5,7 +5,7 @@ import { Row, Col, Container } from "react-bootstrap";
 
 // import "../css/form.css";
 
-const Form = () => {
+const GradesForm = ({ data }) => {
   const [forms, setForms] = useState([
     {
       id: 1,
@@ -50,6 +50,12 @@ const Form = () => {
     ]);
   };
 
+  const onClick = (e) => {
+    e.preventDefault();
+    console.log(data[0]);
+    console.log("test");
+  };
+
   // const handleSubmit = (e) => {
   //   // display form vals
   //   e.preventDefault();
@@ -90,8 +96,10 @@ const Form = () => {
       <Row>
         <AddButton addForm={addForm} />
       </Row>
+      <p>{data[0]}</p>
+      <button onClick={onClick}>test</button>
     </Container>
   );
 };
 
-export default Form;
+export default GradesForm;

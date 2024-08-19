@@ -2,15 +2,19 @@ import { useState } from "react";
 import { Container } from "react-bootstrap";
 // import "./App.css";
 import GradesForm from "./components/Form";
+import FileSelector from "./components/FileSelector";
+import CSVReader from "./components/CSVReader";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [data, setData] = useState([]);
 
   return (
     <>
       <Container className="CarbTrackerDiv" fluid>
         <h1 className="trackerh1"> Grade Calculator </h1>
-        <GradesForm />
+        {/* <FileSelector /> */}
+        <CSVReader setData={setData} />
+        <GradesForm data={data} />
       </Container>
     </>
   );
