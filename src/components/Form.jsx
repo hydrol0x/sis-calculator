@@ -1,19 +1,53 @@
 import { useState } from "react";
 import FormElement from "./FormElement";
 import AddButton from "./AddButton";
+import { Row, Col, Container } from "react-bootstrap";
 
-import "../css/form.css";
+// import "../css/form.css";
 
 const Form = () => {
   const [forms, setForms] = useState([
-    { id: 1, assignmentName: "Assignment 1", points: 0, totalPoints: 0, category: ["Writing", 10] },
-    { id: 2, assignmentName: "Assignment 1", points: 0, totalPoints: 0, category: ["Writing", 10] },
-    { id: 3, assignmentName: "Assignment 1", points: 0, totalPoints: 0, category: ["Writing", 10] },
-    { id: 0, assignmentName: "Assignment 1", points: 0, totalPoints: 0, category: ["Writing", 10] },
+    {
+      id: 1,
+      assignmentName: "Assignment 1",
+      points: 0,
+      totalPoints: 0,
+      category: ["Writing", 10],
+    },
+    {
+      id: 2,
+      assignmentName: "Assignment 1",
+      points: 0,
+      totalPoints: 0,
+      category: ["Writing", 10],
+    },
+    {
+      id: 3,
+      assignmentName: "Assignment 1",
+      points: 0,
+      totalPoints: 0,
+      category: ["Writing", 10],
+    },
+    {
+      id: 0,
+      assignmentName: "Assignment 1",
+      points: 0,
+      totalPoints: 0,
+      category: ["Writing", 10],
+    },
   ]);
 
   const addForm = () => {
-    setForms([...forms, { id: forms.length, assignmentName: "Assignment 1", points: 0, totalPoints: 0, category: ["Writing", 10] }]);
+    setForms([
+      ...forms,
+      {
+        id: forms.length,
+        assignmentName: "Assignment 1",
+        points: 0,
+        totalPoints: 0,
+        category: ["Writing", 10],
+      },
+    ]);
   };
 
   // const handleSubmit = (e) => {
@@ -31,24 +65,32 @@ const Form = () => {
   //   setForms(forms);
   //   setTotalCarbs(total_carbs);
   //   };
-    
+
   return (
-    <div className="Tracker">
-      <div className="headingWrapper">
-        <h1>Assignment</h1> <h1>Grade</h1> <h1>Category</h1>
-      </div>
-      <form>
-        {Object.keys(forms).map((key, index) => {
-          const val = forms[key];
-          return (
-            <FormElement
-              {...val}
-            />
-          );
-        })}
-      </form>
-      <AddButton addForm={addForm} />
-    </div>
+    <Container className="pt-5">
+      <Row className="text-center">
+        <Col>
+          <h1>Assignment</h1>
+        </Col>
+        <Col>
+          <h1>Grade</h1>
+        </Col>
+        <Col>
+          <h1>Category</h1>
+        </Col>
+      </Row>
+      <Row>
+        <form>
+          {Object.keys(forms).map((key, index) => {
+            const val = forms[key];
+            return <FormElement {...val} />;
+          })}
+        </form>
+      </Row>
+      <Row>
+        <AddButton addForm={addForm} />
+      </Row>
+    </Container>
   );
 };
 

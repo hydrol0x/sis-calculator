@@ -1,29 +1,34 @@
-import "../css/formElement.css";
+// import "../css/formElement.css";
+import { Row, Col, Container, Form } from "react-bootstrap";
 
 const FormElement = ({ id, category, points, assignmentName, totalPoints }) => {
-
   return (
-    <div className="FormElement">
-      <div className="inputDiv" id="foodDiv">
-        { assignmentName }
-      </div>
-      <div className="inputDiv" id="weightDiv">
-        <input
-          id={`${id}weight`}
-          type="text"
-          className="weight"
-          defaultValue={points}
-        />
-        <p>
-          / {totalPoints}
-        </p>
-      </div>
-      <div className="inputDiv" id="carbsDiv">
-        <p id={`${id}carbs`} className="carbs">
-          {category[0]} - {category[1]}%
-        </p>
-      </div>
-    </div>
+    <Container className="FormElement py-1">
+      <Row className="justify-content-md-center">
+        <Col className="d-flex justify-content-center">
+          <div className="inputDiv" id="foodDiv">
+            {assignmentName}
+          </div>
+        </Col>
+
+        <Col className="d-flex justify-content-center">
+          <input
+            id={`${id}weight`}
+            type="text"
+            className="weight"
+            defaultValue={points}
+          />
+          <p>/ {totalPoints}</p>
+        </Col>
+        <Col className="d-flex justify-content-center">
+          <div className="inputDiv" id="carbsDiv">
+            <p id={`${id}carbs`} className="carbs">
+              {category[0]} - {category[1]}%
+            </p>
+          </div>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 
