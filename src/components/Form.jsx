@@ -1,12 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import FormElement from "./FormElement";
 import AddButton from "./AddButton";
 import { Row, Col, Container } from "react-bootstrap";
+import { parseAssignments } from "../scripts/parseData";
 
 // import "../css/form.css";
 
 const GradesForm = ({ data }) => {
-  const [forms, setForms] = useState([
+  const mockData = [
     {
       id: 1,
       assignmentName: "Assignment 1",
@@ -35,7 +36,16 @@ const GradesForm = ({ data }) => {
       totalPoints: 0,
       category: ["Writing", 10],
     },
-  ]);
+  ];
+
+  const [forms, setForms] = useState(mockData);
+
+  useEffect(() => {
+    if (data && data.length > 0) {
+      const parsedData = parseAssignments(data);
+      setForms(parsedData);
+    }
+  }, [data]);
 
   const addForm = () => {
     setForms([
@@ -54,6 +64,8 @@ const GradesForm = ({ data }) => {
     e.preventDefault();
     console.log(data[0]);
     console.log("test");
+    const parsedData = parseAssignments(data);
+    console.log(parsedData);
   };
 
   // const handleSubmit = (e) => {
