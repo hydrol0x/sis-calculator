@@ -97,7 +97,7 @@ const GradesForm = ({ data }) => {
           <h1>Category</h1>
         </Col>
       </Row>
-      <Row>
+      <Row className="text-center">
         <form>
           {Object.keys(forms).map((key, index) => {
             const val = forms[key];

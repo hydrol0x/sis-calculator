@@ -21,3 +21,9 @@ export function parseAssignments(data) {
     };
   });
 }
+
+export function calculateGrade() {
+  
+
+
+}

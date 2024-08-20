@@ -1,3 +1,5 @@
+/*
+
 .CarbTrackerDiv {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
@@ -23,9 +25,19 @@
   font-family: sans-serif;
 }
 
+*/
+
 .trackerh1 {
   grid-column: 2;
   font-family: sans-serif;
   font-size: xxx-large;
-  color: rgb(58, 85, 243);
+  color: rgb(255, 255, 255);
+  background-color: rgb(58, 99, 161);
+  width: 100vw;
+  margin-left: -50vw;
+  left: 50%;
+  position: relative;
+  padding: 0 20px;
+  text-align: left;
+  
 }

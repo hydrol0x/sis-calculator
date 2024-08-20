@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Container } from "react-bootstrap";
-// import "./App.css";
+import "./App.css";
 import GradesForm from "./components/Form";
 import CSVReader from "./components/CSVReader";
 
