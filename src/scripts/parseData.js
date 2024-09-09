@@ -1,9 +1,15 @@
 export function parseAssignments(data) {
+  
+  if (data.length == 0) {
+    return;
+  }
+  
   // Extract the header row to find relevant indexes
   const headers = data[0];
   const assignmentIndex = headers.indexOf("Assignment");
   const pointsIndex = headers.indexOf("Points");
   const categoryIndex = headers.indexOf("Category");
+
 
   // Iterate over each row and map it to the desired object structure
   return data.slice(1).map((row) => {
@@ -20,10 +26,4 @@ export function parseAssignments(data) {
       category: [row[categoryIndex], 10],
     };
   });
-}
-
-export function calculateGrade() {
-  
-
-
 }

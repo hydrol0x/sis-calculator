@@ -3,6 +3,7 @@ import FormElement from "./FormElement";
 import AddButton from "./AddButton";
 import { Row, Col, Container } from "react-bootstrap";
 import { parseAssignments } from "../scripts/parseData";
+import { gradeCalc } from "../scripts/gradeCalc";
 
 // import "../css/form.css";
 
@@ -86,6 +87,7 @@ const GradesForm = ({ data }) => {
 
   return (
     <Container className="pt-5">
+      <h1>{gradeCalc(parseAssignments(data))}</h1>
       <Row className="text-center">
         <Col>
           <h1>Assignment</h1>

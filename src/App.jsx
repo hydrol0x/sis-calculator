@@ -3,6 +3,8 @@ import { Container } from "react-bootstrap";
 import "./App.css";
 import GradesForm from "./components/Form";
 import CSVReader from "./components/CSVReader";
+import { gradeCalc } from "./scripts/gradeCalc";
+import { parseAssignments } from "./scripts/parseData";
 
 function App() {
   const [data, setData] = useState([]);
@@ -14,6 +16,7 @@ function App() {
         {/* <FileSelector /> */}
         <CSVReader setData={setData} />
         <GradesForm data={data} />
+        
       </Container>
     </>
   );
