@@ -108,7 +108,6 @@ const GradesForm = ({ data }) => {
       <Row>
         <AddButton addForm={addForm} />
       </Row>
-      <p>{data[0]}</p>
       <button onClick={onClick}>test</button>
     </Container>
   );
