@@ -39,7 +39,7 @@ const GradesForm = ({ data }) => {
     },
   ];
 
-  const [forms, setForms] = useState(mockData);
+  const [forms, setForms] = useState([]);
 
   useEffect(() => {
     if (data && data.length > 0) {

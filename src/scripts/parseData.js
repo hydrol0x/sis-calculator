@@ -1,3 +1,4 @@
+// TODO handle NG and just throw out the value then instead of 0
 export function parseAssignments(data) {
   if (data.length == 0) {
     return;
@@ -21,7 +22,7 @@ export function parseAssignments(data) {
       assignmentName: row[assignmentIndex],
       points: parseFloat(points) || 0,
       totalPoints: parseFloat(totalPoints) || 0,
-      category: [row[categoryIndex], 10],
+      category: [row[categoryIndex], 100], // TODO unhardcode category weight
     };
   });
 }
