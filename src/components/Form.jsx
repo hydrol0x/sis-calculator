@@ -87,7 +87,7 @@ const GradesForm = ({ data }) => {
 
   return (
     <Container className="pt-5">
-      <h1>{gradeCalc(parseAssignments(data))}</h1>
+      <h1>final grade: {gradeCalc(parseAssignments(data))}</h1>
       <Row className="text-center">
         <Col>
           <h1>Assignment</h1>
