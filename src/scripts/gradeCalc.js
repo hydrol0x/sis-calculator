@@ -6,7 +6,13 @@ export function gradeCalc(gradeArray) {
   }
 
   gradeArray.forEach((grade) => {
-    console.log(grade);
+    console.log([
+      grade.assignmentName,
+      grade.points,
+      grade.totalPoints,
+      grade.category,
+      grade.weight,
+    ]);
 
     const points = grade.points;
     const totalPoints = grade.totalPoints;
@@ -15,9 +21,9 @@ export function gradeCalc(gradeArray) {
     const weight = category / 100;
 
     if (!(categoryName in gradeData)) {
-      gradeData.categoryName = [points, totalPoints, weight];
+      gradeData[categoryName] = [points, totalPoints, weight];
     } else {
-      let entry = gradeData.categoryName;
+      let entry = gradeData[categoryName];
       entry[0] += points;
       entry[1] += totalPoints;
     }
@@ -26,16 +32,23 @@ export function gradeCalc(gradeArray) {
   let totalGrade = 0;
 
   let weightSum = 0;
+  console.log(gradeData);
   for (const [key, value] of Object.entries(gradeData)) {
     const points = value[0];
-    const totalPoints = value[1];
+    const totalPoints = Math.max(value[1], 1);
     const weight = value[2];
 
     let categoryGradePercentage = points / totalPoints;
+
+    // console.log("categorygradepercentage " + categoryGradePercentage);
     let weightedGrade = categoryGradePercentage * weight;
+    console.log([points, totalPoints, weight, weightedGrade]);
+    // console.log("weightedGrade " + weightedGrade);
     totalGrade += weightedGrade;
     weightSum += weight;
   }
 
+  console.log("totalGrade " + totalGrade);
+  console.log("weightSum " + weightSum);
   return totalGrade / weightSum;
 }

@@ -12,27 +12,27 @@ const GradesForm = ({ data }) => {
     {
       id: 1,
       assignmentName: "Assignment 1",
-      points: 0,
-      totalPoints: 0,
+      points: 5,
+      totalPoints: 10,
       category: ["Writing", 10],
     },
     {
       id: 2,
-      assignmentName: "Assignment 1",
+      assignmentName: "Assignment 2",
       points: 0,
       totalPoints: 0,
       category: ["Writing", 10],
     },
     {
       id: 3,
-      assignmentName: "Assignment 1",
+      assignmentName: "Assignment 3",
       points: 0,
       totalPoints: 0,
       category: ["Writing", 10],
     },
     {
       id: 0,
-      assignmentName: "Assignment 1",
+      assignmentName: "Assignment 4",
       points: 0,
       totalPoints: 0,
       category: ["Writing", 10],
@@ -45,6 +45,8 @@ const GradesForm = ({ data }) => {
     if (data && data.length > 0) {
       const parsedData = parseAssignments(data);
       setForms(parsedData);
+      console.log("parsedData");
+      console.log(parsedData);
     }
   }, [data]);
 
@@ -87,7 +89,7 @@ const GradesForm = ({ data }) => {
 
   return (
     <Container className="pt-5">
-      <h1>final grade: {gradeCalc(parseAssignments(data))}</h1>
+      <h1>final grade: {gradeCalc(forms)}</h1>
       <Row className="text-center">
         <Col>
           <h1>Assignment</h1>
