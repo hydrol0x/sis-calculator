@@ -12,16 +12,16 @@ const GradesForm = ({ data }) => {
     {
       id: 1,
       assignmentName: "Assignment 1",
-      points: 5,
+      points: 10,
       totalPoints: 10,
       category: ["Writing", 10],
     },
     {
       id: 2,
       assignmentName: "Assignment 2",
-      points: 0,
-      totalPoints: 0,
-      category: ["Writing", 10],
+      points: 5,
+      totalPoints: 10,
+      category: ["Writing", 90],
     },
     {
       id: 3,
@@ -89,7 +89,7 @@ const GradesForm = ({ data }) => {
 
   return (
     <Container className="pt-5">
-      <h1>final grade: {gradeCalc(forms)}</h1>
+      <h1>final grade: {(gradeCalc(forms) * 100).toFixed(2)}%</h1>
       <Row className="text-center">
         <Col>
           <h1>Assignment</h1>
